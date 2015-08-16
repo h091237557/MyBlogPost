@@ -1,39 +1,19 @@
-官爺的下人曰 : 小二 ~ 物件導向有三個主要的特性分為『繼承(Inheritance)』、『多型(Polymorphism)』、『封裝(Encapsulation)』
-官爺的下人曰 : 可否給我們家官爺說說何謂『繼承』??
-店小二曰 : 繼承…就…是繼承…小的不是很清楚…
-官爺的曰 : 怒! 回家種田去吧~
-店小二曰 : ……OS(可是我家沒田啊)
 
-物件導向特性之一繼承，曾幾何時，小的我也曾經被問過
-但總是如上店小二，支支烏烏的答不上來而被羞辱~
-因此來寫寫這篇文章好好理解一下『繼承』的概念~
-從周星馳電影的台詞由上轉至下。
+#繼承概念
 
-『憑你的智慧，我很難跟你解釋！』
-     ↓
-『憑你的智慧，我唬得了你嗎？』
-
-何謂繼承 ?
-陳夢吉: 你有沒有老爸
-小二 : 有啊!
-陳夢吉 : 那你會不會繼承你老爸有的東西 ?
-小二 : 當然!我繼承了老爸的小眼睛、大嘴巴，但就是…缺田。
-陳夢吉 : 這就是『繼承囉』~
-
-
-繼承為物件導向的三大特性之一，你可以想像老爸與兒子的關係，
+`繼承`為物件導向的`三大特性之一(封裝、多型)`，你可以想像老爸與兒子的關係，
 兒子會繼承老爸所擁有的特徵(屬性)和)財產(方法)(現實上不一定，但請官爺們想簡單點)，
 兒子可能會有老爸的大鼻子或小嘴巴，並且可以開著老爸的車(財產)出去玩，這就是繼承。
 
 
 繼承父類別(基底類別 Base Class)的類別就被稱為子類別(衍生類別 Derived Class)，子類別繼承了父類別的屬性與方法。
 
-注意:
+`注意`:
 繼承是可以傳遞，Class C繼承至Class B，而Class B繼承至Class A，則Class C會繼承至Class A、B
 白話文就是，你也會繼承到你阿公的東西。
 
-以下為繼承程式碼
-  /// <summary>
+	以下為繼承程式碼
+  	/// <summary>
     /// 父類別
     /// </summary>
     public class Car
@@ -73,12 +53,15 @@
 
 以下紅色框框的部份就是從父類別Car繼承而來的屬性與方法
 
-注意:
+![未命名.png](http://user-image.logdown.io/user/13878/blog/13097/post/291243/iCWBf6ATp6ixAC0PdCMT_%E6%9C%AA%E5%91%BD%E5%90%8D.png)
+
+
+`注意`:
 Equals、GetHashCode、GetType、ToString，就是剛剛提到的繼承會傳遞，
 以上幾個方法都是繼承至阿公(給人容易理解的名詞)類別Object，如下，在C#中只要是物件都會
 繼承Object類別。
 
-  // 摘要:
+	  // 摘要:
     //     支援 .NET Framework 類別階層架構中的所有類別，提供衍生類別的低階服務。 這是 .NET Framework 中所有類別的超基底類別，是型別階層架構的根。
     [Serializable]
     [ClassInterface( ClassInterfaceType.AutoDual)]
@@ -164,22 +147,35 @@ Equals、GetHashCode、GetType、ToString，就是剛剛提到的繼承會傳遞
         //     表示目前物件的字串。
         public virtual string ToString();
     }
+
+
+---
+
+#繼承特性    
+
 繼承它有一些特性(在C#中)
-1.一個子類別只能繼承一個父類別 (C++可以繼承多類別)
-2.子類別一定會呼叫父類別的建構子
 
- BMWCar MyBMWCar = new BMWCar ();
-  TextBox1.Text = MyBMWCar.DriveCar();
-  (看看上面父類別的程式碼)
+* 一個子類別只能繼承一個父類別 (C++可以繼承多類別)
+* 子類別一定會呼叫父類別的建構子
 
-執行結果
+		BMWCar MyBMWCar = new BMWCar ();
+		TextBox1.Text = MyBMWCar.DriveCar();
+		(看看上面父類別的程式碼)
+		
+		執行結果
+		正在開『Blue』的車時速『50』在移動
+		(上面正是父類別的執行結果)
 
 
-注意:
+
+
+`注意`:
 但這時如果子類別有有一個建構子會著麼樣呢??
-自訂子類別建構子
+先自訂子類別建構子如下，然後在執行，會發現結果為`會先執行父類別建構子再執行子類別建構子`。
 
- /// <summary>
+
+	
+ 	/// <summary>
     /// 子類別繼承Car
     /// </summary>
     public class BMWCar :Car
@@ -195,9 +191,14 @@ Equals、GetHashCode、GetType、ToString，就是剛剛提到的繼承會傳遞
         public string BMWPower;
 
     }
-執行結果
+    
+    執行結果
+    正在開『BMW_red』的車時速『BMW500』在移動
+    (會先執行父類別建構子再執行子類別建構子)
 
-參考資料:
-http://zh.wikipedia.org/wiki/%E7%BB%A7%E6%89%BF%E6%80%A7
-http://programdoubledragon.blogspot.tw/2013/03/c7.html
-http://msdn.microsoft.com/zh-tw/library/ms173149.aspx
+
+
+##參考資料:
+* http://zh.wikipedia.org/wiki/%E7%BB%A7%E6%89%BF%E6%80%A7
+* http://programdoubledragon.blogspot.tw/2013/03/c7.html
+* http://msdn.microsoft.com/zh-tw/library/ms173149.aspx
