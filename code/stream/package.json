@@ -1,17 +1,14 @@
 {
-  "name": "20170603",
+  "name": "n",
   "version": "1.0.0",
   "description": "",
-  "main": "stream_test1.js",
+  "main": "duplex.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chance": "^1.0.9",
-    "mkdirp": "^0.5.1",
-    "path": "^0.12.7",
-    "usage": "^0.7.1"
+    "mkdirp": "^0.5.1"
   }
 }
