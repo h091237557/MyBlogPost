@@ -8,6 +8,7 @@ if (cluster.isMaster) {
     console.log("cpu num: " + numCPUs.toString());
 
     process.on('SIGUSR2', function () {
+        console.log("Received SIGUSR2 from system");
         console.log("Restarting workers");
         var workers = Object.keys(cluster.workers);
         
