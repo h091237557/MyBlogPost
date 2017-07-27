@@ -1,0 +1,106 @@
+  body {
+   	background:none;
+   	background-color:#333;
+   	font-size:1.1em;
+   }
+   h1 {
+     color:#fc0;
+   }
+   h3 {
+   	 padding-bottom:5px;
+   	 font-weight : bold !important;
+     font-size:165% !important;
+     border-bottom : 2px inset #87ceeb;
+   	 font:800 2.1em "PT Serif",Georgia,Times,"Times New Roman","Songti SC","Hiragino Mincho ProN",serif;
+   }
+   h4 {
+   	font-size:115% !important;
+    color:lightgreen !important;
+   }
+   h5 {
+   font-size:105% !important;
+   color:lightgreen !important;
+   }
+   h2,h3 {
+     color : #87ceeb !important;
+   }
+   a {
+   	color: #fc0 !important;
+   }
+   a:hover {
+    color:#f90 !important;
+   }
+	ol, ul {
+   	list-style-position:outside !important;
+   }
+   
+   img {
+   	border:none !important;
+   }
+   
+   .article {
+   	color:#ddd;
+   }
+   
+   .content .post{
+
+   	background:none;
+    background-color:#444;
+    box-shadow:none;
+   }
+   
+   .content .post .article {
+   	color:#ddd;
+   }
+		.header .nav.chrome-hack a>span {
+    color:#fc0;
+   }
+   
+   pre {
+    background-color:#2b2b2b !important;
+    color:#fff;
+   border:none;
+   border-radius :5px;
+   -webkit-box-shadow:inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
+   box-shadow:inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
+   
+   }
+   code {
+    border:none;
+   	background-color:#2b2b2b !important;
+    color:#fff;
+    max-width:100%;
+    overflow-x:auto;
+    vertical-align:middle;
+    border-radius:5px;
+    display:inline-block;
+    margin:0 3px;
+    padding:0 0.5em;
+   text-shadow:none;
+   }
+
+   blockquote {
+     background-color: #fff1a5;
+     border-radius:3px;
+     border-left-color: #ffe559 !important;
+     border-left-width: 1em;
+   }
+   blockquote > p {
+     color: black;
+     padding: 10px;
+   }
+   blockquote > p > a {
+      color: #7f7020 !important;
+    }
+   blockquote  code {
+       background-color: #e5ca39 !important;
+       color:black;
+       padding-right: 0.6em;
+       margin-bottom: 0.1em;
+       font-weight:bolder;
+    }
+   
+::selection {
+    color: #fc0; 
+
+}
