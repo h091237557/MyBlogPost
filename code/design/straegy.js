@@ -7,17 +7,34 @@ var user = {
 
 
 var loginStrategy = {
-    fb : function(){
+    fb: function () {
         doFbLoginSomething();
     },
-    google : function(){
+    google: function () {
         doGoogleLoginSomething();
     },
-    custom : function(){
+    custom: function () {
         doSomething();
     }
 }
 
 user.login(loginStrategy.fb);
+
+
+var user = {
+    login: function (stragtegy) {
+        if (type == "google") {
+            doGoogleLoginSomething();
+            console.log("google login process");
+        } else if (type == "facebook") {
+            doFbLoginSomething();
+            console.log("facebook login process");
+        } else {
+            doSomething();
+            console.log("custom login process");
+        }
+
+    }
+}
 
 
