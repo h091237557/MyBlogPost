@@ -39,14 +39,11 @@ type: employee
 接下來的教學可以直接用這個專案來直接執行:
 
 ```
-git clone 
-
+git clone https://github.com/h091237557/docker-composer-tools.git
+cd elasticsearch/
 docker-compose up
 ```
 下面為官網所直接使用的`docker compose`的檔案。([官網傳送門](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html))
-
-
-
 
 ```
 version: '2.2'
