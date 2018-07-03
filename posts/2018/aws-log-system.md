@@ -18,7 +18,7 @@
 
 其中 log 接受端，有很多種選擇，你可以選擇來源端的本機，並且選擇將之儲放成文字檔，又或是儲放在某個資料庫中，各種儲放法都優有缺。
 
-這裡我們選擇了使用`Elasticsearch`來當來源端，主要的理由如下:
+這裡我們選擇了使用`Elasticsearch`來當接受端，主要的理由如下:
 
 1. 可以進行快速的搜尋
 2. 可擴展性強
@@ -171,4 +171,12 @@ curl 'your aws elasticsearch ul'/{index}/_search?pretty
 * [ONLY AWS 開發文件](https://docs.aws.amazon.com/zh_cn/firehose/latest/dev/before-you-begin.html)
 
 
-
+CREATE EXTERNAL TABLE IF NOT EXISTS json_table5 (
+  `data` string,
+  `name` string
+)
+ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
+WITH SERDEPROPERTIES (
+  'serialization.format' = '1',
+  'field.delim' = ' '
+) LOCATION 's3://<bucketname>/';
